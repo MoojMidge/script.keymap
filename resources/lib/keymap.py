@@ -63,7 +63,8 @@ def main():
     ## main loop ##
     confirm_discard = False
     while not KODIMONITOR.abortRequested():
-        idx = Dialog().select(tr(30000), [tr(30003), tr(30004), tr(30005)])
+        idx = Dialog().select(tr(30000),
+                              [tr(30003), tr(30004), tr(30013), tr(30005)])
         if idx == 0:
             # edit
             editor = Editor(defaultkeymap, userkeymap)
@@ -74,6 +75,10 @@ def main():
             confirm_discard = bool(userkeymap)
             userkeymap = []
         elif idx == 2:
+            # reload
+            xbmc.executebuiltin("action(reloadkeymaps)")
+            break
+        elif idx == 3:
             # backup any user defined keymaps
             gen_filename = os.path.basename(gen_file)
             for name in os.listdir(userdata):

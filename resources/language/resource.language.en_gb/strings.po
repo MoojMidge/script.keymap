@@ -76,7 +76,11 @@ msgctxt "#30012"
 msgid "Remove"
 msgstr ""
 
-# empty strings from id 30013 to 30099
+msgctxt "#30013"
+msgid "Reload keymap from file"
+msgstr ""
+
+# empty strings from id 30014 to 30099
 
 # Window names
 
